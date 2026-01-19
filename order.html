@@ -21,53 +21,67 @@
     </nav>
 </header>
 
-    <main class="order-container">
-        <h1>Order Your Favorites</h1>
-        
-        <div class="order-content">
-            <div class="selection-area">
-                <div class="order-card">
-                    <h3>☕ เลือกเครื่องดื่ม</h3>
-                    <div class="item-row">
-                        <input type="checkbox" class="product" data-price="65" id="item1">
-                        <label for="item1">Hot Cappuccino (65.-)</label>
-                        <input type="number" class="qty" value="1" min="1" disabled>
-                    </div>
-                    <div class="item-row">
-                        <input type="checkbox" class="product" data-price="75" id="item2">
-                        <label for="item2">Iced Latte (75.-)</label>
-                        <input type="number" class="qty" value="1" min="1" disabled>
-                    </div>
+   <main class="order-container">
+    <h1>Order Your Favorites</h1>
+    
+    <div class="order-content">
+        <div class="selection-area">
+            
+            <div class="order-card">
+                <h3>☕ Coffee & Drinks</h3>
+                <div class="item-row">
+                    <input type="checkbox" class="product" data-price="55" id="item-espresso">
+                    <label for="item-espresso">Espresso (55.-)</label>
+                    <input type="number" class="qty" value="1" min="1" disabled>
                 </div>
-
-                <div class="order-card">
-                    <h3>🍰 เลือกขนม</h3>
-                    <div class="item-row">
-                        <input type="checkbox" class="product" data-price="85" id="item3">
-                        <label for="item3">Orange Blossom Cake (85.-)</label>
-                        <input type="number" class="qty" value="1" min="1" disabled>
-                    </div>
-                    <div class="item-row">
-                        <input type="checkbox" class="product" data-price="75" id="item4">
-                        <label for="item4">Butter Croissant (75.-)</label>
-                        <input type="number" class="qty" value="1" min="1" disabled>
-                    </div>
+                <div class="item-row">
+                    <input type="checkbox" class="product" data-price="75" id="item-latte">
+                    <label for="item-latte">Iced Latte (75.-)</label>
+                    <input type="number" class="qty" value="1" min="1" disabled>
+                </div>
+                <div class="item-row">
+                    <input type="checkbox" class="product" data-price="80" id="item-matcha">
+                    <label for="item-matcha">Matcha Green Tea (80.-)</label>
+                    <input type="number" class="qty" value="1" min="1" disabled>
                 </div>
             </div>
 
-            <div class="summary-area">
-                <div class="summary-card">
-                    <h3>สรุปรายการสั่งซื้อ</h3>
-                    <hr>
-                    <div class="total-row">
-                        <span>ราคารวมทั้งหมด:</span>
-                        <span class="total-price"><span id="total">0</span> บาท</span>
-                    </div>
-                    <button class="btn-order" onclick="alert('สั่งซื้อสำเร็จ! ขอบคุณครับ')">ยืนยันการสั่งซื้อ</button>
+            <div class="order-card">
+                <h3>🍰 Cakes & Bakery</h3>
+                <div class="item-row">
+                    <input type="checkbox" class="product" data-price="120" id="item-strawberry">
+                    <label for="item-strawberry">Strawberry Shortcake (120.-)</label>
+                    <input type="number" class="qty" value="1" min="1" disabled>
                 </div>
+                <div class="item-row">
+                    <input type="checkbox" class="product" data-price="110" id="item-blueberry">
+                    <label for="item-blueberry">Blueberry Cheesecake (110.-)</label>
+                    <input type="number" class="qty" value="1" min="1" disabled>
+                </div>
+                <div class="item-row">
+                    <input type="checkbox" class="product" data-price="95" id="item-lava">
+                    <label for="item-lava">Chocolate Lava (95.-)</label>
+                    <input type="number" class="qty" value="1" min="1" disabled>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="summary-area">
+            <div class="summary-card">
+                <h3>สรุปรายการสั่งซื้อ</h3>
+                <hr>
+                <div id="order-list" style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+                    </div>
+                <div class="total-row">
+                    <span>ราคารวมทั้งหมด:</span>
+                    <span class="total-price"><span id="total">0</span> บาท</span>
+                </div>
+                <button class="btn-order" onclick="alert('รับออเดอร์เรียบร้อยแล้ว!')">ยืนยันการสั่งซื้อ</button>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
     <script>
         const products = document.querySelectorAll('.product');
