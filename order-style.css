@@ -1,0 +1,62 @@
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #fdfaf7;
+}
+
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 10%; background: #fff; border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #6d4c41;
+}
+
+.navbar ul { display: flex; list-style: none; }
+.navbar ul li { margin-left: 25px; }
+.navbar ul li a { text-decoration: none; color: #777; }
+.navbar ul li a.active { color: #6d4c41; font-weight: 600; }
+
+.order-container {
+    max-width: 1000px; margin: 50px auto; padding: 0 20px;
+}
+
+h1 { font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 40px; color: #3e2723; }
+
+.order-content {
+    display: grid; grid-template-columns: 1fr 350px; gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .order-content { grid-template-columns: 1fr; }
+}
+
+.order-card, .summary-card {
+    background: white; padding: 30px; border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 20px;
+}
+
+.item-row {
+    display: flex; align-items: center; margin: 15px 0; gap: 10px;
+}
+
+.item-row input[type="number"] {
+    width: 60px; padding: 5px; border: 1px solid #ddd; border-radius: 5px; margin-left: auto;
+}
+
+.summary-card h3 { color: #6d4c41; margin-bottom: 20px; }
+.total-row {
+    display: flex; justify-content: space-between;
+    font-size: 1.3rem; font-weight: 600; margin: 20px 0; color: #3e2723;
+}
+
+.btn-order {
+    width: 100%; padding: 15px; background: #6d4c41; color: white;
+    border: none; border-radius: 10px; font-size: 1.1rem; cursor: pointer; transition: 0.3s;
+}
+
+.btn-order:hover { background: #5d4037; }

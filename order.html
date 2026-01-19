@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now | Warm Brew</title>
+    <link rel="stylesheet" href="order-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">Warm Brew</a></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="menu.html">เมนู</a></li>
+            <li><a href="contact.html">ติดต่อ</a></li>
+            <li><a href="order.html" class="active">สั่งซื้อ</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="order-container">
+        <h1>Order Your Favorites</h1>
+        
+        <div class="order-content">
+            <div class="selection-area">
+                <div class="order-card">
+                    <h3>☕ เลือกเครื่องดื่ม</h3>
+                    <div class="item-row">
+                        <input type="checkbox" class="product" data-price="65" id="item1">
+                        <label for="item1">Hot Cappuccino (65.-)</label>
+                        <input type="number" class="qty" value="1" min="1" disabled>
+                    </div>
+                    <div class="item-row">
+                        <input type="checkbox" class="product" data-price="75" id="item2">
+                        <label for="item2">Iced Latte (75.-)</label>
+                        <input type="number" class="qty" value="1" min="1" disabled>
+                    </div>
+                </div>
+
+                <div class="order-card">
+                    <h3>🍰 เลือกขนม</h3>
+                    <div class="item-row">
+                        <input type="checkbox" class="product" data-price="85" id="item3">
+                        <label for="item3">Orange Blossom Cake (85.-)</label>
+                        <input type="number" class="qty" value="1" min="1" disabled>
+                    </div>
+                    <div class="item-row">
+                        <input type="checkbox" class="product" data-price="75" id="item4">
+                        <label for="item4">Butter Croissant (75.-)</label>
+                        <input type="number" class="qty" value="1" min="1" disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-area">
+                <div class="summary-card">
+                    <h3>สรุปรายการสั่งซื้อ</h3>
+                    <hr>
+                    <div class="total-row">
+                        <span>ราคารวมทั้งหมด:</span>
+                        <span class="total-price"><span id="total">0</span> บาท</span>
+                    </div>
+                    <button class="btn-order" onclick="alert('สั่งซื้อสำเร็จ! ขอบคุณครับ')">ยืนยันการสั่งซื้อ</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const products = document.querySelectorAll('.product');
+        const totalDisplay = document.getElementById('total');
+
+        products.forEach(product => {
+            product.addEventListener('change', function() {
+                const qtyInput = this.parentElement.querySelector('.qty');
+                qtyInput.disabled = !this.checked;
+                calculateTotal();
+            });
+        });
+
+        document.querySelectorAll('.qty').forEach(qty => {
+            qty.addEventListener('input', calculateTotal);
+        });
+
+        function calculateTotal() {
+            let total = 0;
+            products.forEach(product => {
+                if (product.checked) {
+                    const price = parseInt(product.getAttribute('data-price'));
+                    const qty = parseInt(product.parentElement.querySelector('.qty').value) || 0;
+                    total += price * qty;
+                }
+            });
+            totalDisplay.innerText = total.toLocaleString();
+        }
+    </script>
+
+</body>
+</html>
