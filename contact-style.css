@@ -87,17 +87,22 @@ body {
     color: #666;
 }
 
-.map-placeholder {
+/* ปรับปรุงจาก .map-placeholder เดิม */
+.map-container {
     width: 100%;
-    height: 250px;
+    height: 350px; /* ปรับความสูงตามชอบ */
     background-color: #e0d7d0;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #8d6e63;
+    border-radius: 15px;
+    overflow: hidden; /* เพื่อให้ขอบ iframe มนตามคอนเทนเนอร์ */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
 }
 
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 /* Contact Form Side */
 .contact-form {
     background: #fff;
