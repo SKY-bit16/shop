@@ -1,0 +1,134 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #faf9f6; /* สีออฟไวท์ */
+    color: #333;
+}
+
+/* Navbar (Reuse basic style but can be customized) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #6d4c41;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-left: 25px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #777;
+    transition: 0.3s;
+}
+
+.navbar ul li a.active {
+    color: #6d4c41;
+    font-weight: 600;
+}
+
+/* Menu Layout */
+.menu-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.menu-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #3e2723;
+    margin-bottom: 10px;
+}
+
+.menu-header p {
+    color: #888;
+    font-style: italic;
+}
+
+/* Section Styling */
+.menu-section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #6d4c41;
+    border-bottom: 2px solid #d7ccc8;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* Menu Card Styling */
+.menu-list {
+    display: grid;
+    grid-template-columns: 1fr; /* บนมือถือแสดงแถวเดียว */
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .menu-list {
+        grid-template-columns: 1fr 1fr; /* บนคอมแสดง 2 คอลัมน์ */
+        gap: 40px;
+    }
+}
+
+.menu-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.menu-info h3 {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.menu-info p {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.menu-price {
+    font-weight: 600;
+    color: #6d4c41;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #f1ede9;
+    color: #8d6e63;
+}
