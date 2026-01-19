@@ -1,73 +1,132 @@
-<main class="order-container">
-    <header class="order-header">
-        <h1>Order Your Favorites</h1>
-        <p>เลือกเมนูที่คุณชื่นชอบและสั่งซื้อได้ทันที</p>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สั่งซื้อสินค้า | Order Now | Warm Brew</title>
+    <link rel="stylesheet" href="order-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">Warm Brew</a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="menu.html">เมนู</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+                <li><a href="order.html" class="active">สั่งซื้อ</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <div class="order-content">
-        <div class="selection-area">
-            
-            <div class="order-card">
-                <h3>☕ เครื่องดื่ม (Coffee & Drinks)</h3>
-                <div class="item-row">
-                    <input type="checkbox" class="product" data-price="55" id="item-espresso">
-                    <label for="item-espresso">เอสเพรสโซ่ - Espresso (55.-)</label>
-                    <input type="number" class="qty" value="1" min="1" disabled>
-                </div>
-                <div class="item-row">
-                    <input type="checkbox" class="product" data-price="75" id="item-latte">
-                    <label for="item-latte">ลาเต้เย็น - Iced Latte (75.-)</label>
-                    <input type="number" class="qty" value="1" min="1" disabled>
-                </div>
-                <div class="item-row">
-                    <input type="checkbox" class="product" data-price="80" id="item-matcha">
-                    <label for="item-matcha">มัทฉะกรีนที - Matcha Green Tea (80.-)</label>
-                    <input type="number" class="qty" value="1" min="1" disabled>
-                </div>
-            </div>
 
-            <div class="order-card">
-                <h3>🍰 เค้กและเบเกอรี่ (Cakes & Bakery)</h3>
-                <div class="item-row">
-                    <input type="checkbox" class="product" data-price="120" id="item-strawberry">
-                    <label for="item-strawberry">สตรอว์เบอร์รี่ ชอร์ตเค้ก - Strawberry Shortcake (120.-)</label>
-                    <input type="number" class="qty" value="1" min="1" disabled>
-                </div>
-                <div class="item-row">
-                    <input type="checkbox" class="product" data-price="110" id="item-blueberry">
-                    <label for="item-blueberry">บลูเบอร์รี่ ชีสเค้ก - Blueberry Cheesecake (110.-)</label>
-                    <input type="number" class="qty" value="1" min="1" disabled>
-                </div>
-                <div class="item-row">
-                    <input type="checkbox" class="product" data-price="95" id="item-lava">
-                    <label for="item-lava">ช็อกโกแลต ลาวา - Chocolate Lava (95.-)</label>
-                    <input type="number" class="qty" value="1" min="1" disabled>
-                </div>
-            </div>
-            
+    <main class="order-container">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #3e2723;">Order Your Favorites</h1>
+            <p style="color: #8d6e63;">สั่งเมนูโปรดของคุณได้ที่นี่ (คิดราคาอัตโนมัติ)</p>
         </div>
-
-        <div class="summary-area">
-            <div class="summary-card">
-                <h3>สรุปรายการสั่งซื้อ</h3>
-                <hr>
-                <div class="total-row">
-                    <span>ราคารวมทั้งหมด:</span>
-                    <span class="total-price"><span id="total">0</span> บาท</span>
+        
+        <div class="order-content">
+            <div class="selection-area">
+                
+                <div class="order-card">
+                    <h3>☕ เครื่องดื่ม (Coffee & Drinks)</h3>
+                    <div class="item-row">
+                        <input type="checkbox" class="product" data-price="55" id="item-espresso">
+                        <label for="item-espresso">เอสเพรสโซ่ - Espresso (55.-)</label>
+                        <input type="number" class="qty" value="1" min="1" disabled>
+                    </div>
+                    <div class="item-row">
+                        <input type="checkbox" class="product" data-price="75" id="item-latte">
+                        <label for="item-latte">ลาเต้เย็น - Iced Latte (75.-)</label>
+                        <input type="number" class="qty" value="1" min="1" disabled>
+                    </div>
+                    <div class="item-row">
+                        <input type="checkbox" class="product" data-price="80" id="item-matcha">
+                        <label for="item-matcha">มัทฉะกรีนที - Matcha Green Tea (80.-)</label>
+                        <input type="number" class="qty" value="1" min="1" disabled>
+                    </div>
                 </div>
-                <button class="btn-order" onclick="confirmOrder()">ยืนยันการสั่งซื้อ</button>
+
+                <div class="order-card">
+                    <h3>🍰 เค้กและเบเกอรี่ (Cakes & Bakery)</h3>
+                    <div class="item-row">
+                        <input type="checkbox" class="product" data-price="120" id="item-strawberry">
+                        <label for="item-strawberry">สตรอว์เบอร์รี่ชอร์ตเค้ก - Strawberry Shortcake (120.-)</label>
+                        <input type="number" class="qty" value="1" min="1" disabled>
+                    </div>
+                    <div class="item-row">
+                        <input type="checkbox" class="product" data-price="110" id="item-blueberry">
+                        <label for="item-blueberry">บลูเบอร์รี่ชีสเค้ก - Blueberry Cheesecake (110.-)</label>
+                        <input type="number" class="qty" value="1" min="1" disabled>
+                    </div>
+                    <div class="item-row">
+                        <input type="checkbox" class="product" data-price="95" id="item-lava">
+                        <label for="item-lava">ช็อกโกแลตลาวา - Chocolate Lava (95.-)</label>
+                        <input type="number" class="qty" value="1" min="1" disabled>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="summary-area">
+                <div class="summary-card">
+                    <h3>สรุปรายการสั่งซื้อ</h3>
+                    <hr>
+                    <div id="order-list" style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+                        </div>
+                    <div class="total-row" style="display: flex; justify-content: space-between; margin-top: 20px; font-weight: bold; font-size: 1.2rem;">
+                        <span>ราคารวมทั้งหมด:</span>
+                        <span class="total-price" style="color: #6d4c41;"><span id="total">0</span> บาท</span>
+                    </div>
+                    <button class="btn-order" onclick="processOrder()" style="width: 100%; padding: 15px; background: #6d4c41; color: white; border: none; border-radius: 8px; margin-top: 20px; cursor: pointer;">ยืนยันการสั่งซื้อ</button>
+                </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
 
-<script>
-    function confirmOrder() {
-        const total = document.getElementById('total').innerText;
-        if(total === "0") {
-            alert("กรุณาเลือกสินค้าอย่างน้อย 1 รายการครับ");
-        } else {
-            alert("รับออเดอร์เรียบร้อยแล้ว! ยอดรวมของคุณคือ " + total + " บาท");
+    <script>
+        const products = document.querySelectorAll('.product');
+        const totalDisplay = document.getElementById('total');
+
+        products.forEach(product => {
+            product.addEventListener('change', function() {
+                const qtyInput = this.parentElement.querySelector('.qty');
+                // เปิด/ปิด ช่องจำนวนเงิน
+                qtyInput.disabled = !this.checked;
+                if(!this.checked) qtyInput.value = 1; 
+                calculateTotal();
+            });
+        });
+
+        // ดักจับการเปลี่ยนตัวเลขจำนวน
+        document.querySelectorAll('.qty').forEach(qty => {
+            qty.addEventListener('input', calculateTotal);
+            qty.addEventListener('change', calculateTotal);
+        });
+
+        function calculateTotal() {
+            let total = 0;
+            products.forEach(product => {
+                if (product.checked) {
+                    const price = parseInt(product.getAttribute('data-price'));
+                    const qty = parseInt(product.parentElement.querySelector('.qty').value) || 0;
+                    total += price * qty;
+                }
+            });
+            totalDisplay.innerText = total.toLocaleString();
         }
-    }
-</script>
+
+        function processOrder() {
+            const finalPrice = totalDisplay.innerText;
+            if(finalPrice === "0") {
+                alert("กรุณาเลือกเมนูที่ต้องการก่อนสั่งซื้อครับ");
+            } else {
+                alert("รับออเดอร์เรียบร้อยแล้ว! ยอดรวมทั้งหมด: " + finalPrice + " บาท");
+            }
+        }
+    </script>
+
+</body>
+</html>
