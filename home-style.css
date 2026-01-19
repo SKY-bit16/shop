@@ -154,3 +154,32 @@ footer {
     padding: 40px 0;
     margin-top: 50px;
 }
+
+/* เมื่อหน้าจอมีความกว้างน้อยกว่า 768px (ขนาดมือถือและแท็บเล็ตแนวตั้ง) */
+@media (max-width: 768px) {
+    /* ปรับเมนูบาร์ให้เรียงกันลงมา หรือเว้นระยะใหม่ */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .navbar ul {
+        margin-top: 15px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        margin: 0 10px; /* ลดระยะห่างระหว่างเมนู */
+    }
+
+    /* ปรับขนาดตัวอักษรหน้า Hero */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    /* ปรับ Grid เมนูหน้าแรกให้โชว์แค่ 1 คอลัมน์ */
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
