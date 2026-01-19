@@ -75,3 +75,16 @@ h1 { font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 
     color: #8d6e63;
     font-weight: 300;
 }
+
+/* ปรับให้ label ภาษาไทยอ่านง่ายขึ้น */
+.item-row label {
+    font-size: 0.95rem;
+    color: #444;
+    cursor: pointer;
+}
+
+/* เพิ่มสีตอนเอาเมาส์ไปวางที่แถวสินค้า */
+.item-row:hover {
+    background-color: #fffaf0;
+    border-radius: 5px;
+}
