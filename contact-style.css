@@ -187,3 +187,66 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* จัดการตำแหน่งของ List */
+.navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+/* สไตล์ของตัวปุ่ม Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    cursor: pointer;
+}
+
+/* กล่องรายการที่จะแสดงลงมา */
+.dropdown-content {
+    display: none; /* ซ่อนไว้ก่อน */
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border-radius: 8px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+/* สไตล์ของลิงก์ข้างใน Dropdown */
+.dropdown-content a {
+    color: #333 !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f1f1f1;
+    transition: 0.3s;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* เมื่อเอาเมาส์วางที่ลิงก์ย่อย */
+.dropdown-content a:hover {
+    background-color: #f9f5f2;
+    color: #6d4c41 !important;
+}
+
+/* สั่งให้แสดงผลเมื่อเอาเมาส์ไปวางที่คำว่า "ข้อมูลร้าน" */
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+/* เพิ่มแอนิเมชั่นให้นุ่มนวล */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
